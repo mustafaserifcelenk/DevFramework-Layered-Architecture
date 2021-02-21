@@ -1,0 +1,1 @@
+﻿Tüm eğitim boyunca ilgileneceğimiz katman. Burayı geliştireceğiz. Burada loglama, cache, transaction yönetimi, performans yönetimi, validasyon yönetimi, rol bazlı güvenlik, veritabanı ORM entegrasyonlarını burada yürüteceğiz.
