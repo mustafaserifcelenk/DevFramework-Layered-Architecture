@@ -1,0 +1,1 @@
+﻿Abstract diğer katmanlar ile iletişim için kullanılacak, soyut classlarla iletişim kurmak şu manaya geliyor, iş katmanı hiçbir zaman nhibernate veya entityframeworke bağımlı olmayacak

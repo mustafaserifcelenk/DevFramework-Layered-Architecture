@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using NHibernate.Linq
+using NHibernate.Linq;
 
 namespace DevFramework.Core.DataAccess.NHibernate
 {

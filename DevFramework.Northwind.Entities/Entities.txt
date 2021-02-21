@@ -1,0 +1,1 @@
+﻿ComplexTypes : İki üç tablonun joinlenmesiyle oluşan tablo veya dto gibi düşünebiliriz

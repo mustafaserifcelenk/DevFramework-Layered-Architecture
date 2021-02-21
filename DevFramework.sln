@@ -8,6 +8,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Entities", "DevFramework.Northwind.Entities\DevFramework.Northwind.Entities.csproj", "{E5357E66-A5EE-407B-9BB4-38B78E67924F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.DataAccess", "DevFramework.Northwind.DataAccess\DevFramework.Northwind.DataAccess.csproj", "{BD33B8B5-14CE-4149-BCFE-4DEBAE75C684}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75CDC7DE-7AA7-45DA-858B-8A31F12EDE13} = {75CDC7DE-7AA7-45DA-858B-8A31F12EDE13}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevFramework.Northwind.Business", "DevFramework.Northwind.Business\DevFramework.Northwind.Business.csproj", "{D20272F0-783D-4586-9146-6B97A18C4CED}"
 EndProject
