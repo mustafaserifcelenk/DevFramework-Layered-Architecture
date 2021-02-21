@@ -1,4 +1,6 @@
-﻿using DevFramework.Northwind.Business.Abstract;
+﻿using DevFramework.Core.CrossCuttingConcerns.Validation.FluentValidation;
+using DevFramework.Northwind.Business.Abstract;
+using DevFramework.Northwind.Business.ValidationRules.FluentValidation;
 using DevFramework.Northwind.DataAccess.Abstract;
 using DevFramework.Northwind.Entities.Concrete;
 using System;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
-    class ProductManager : IProductService
+    public class ProductManager : IProductService
     {
         private IProductDal _productDal;
 
@@ -17,9 +19,10 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             _productDal = productDal;
         }
-
+        [FluentValidate(typeof(ProductValidator))]
         public Product Add(Product product)
         {
+            //ValidatorTool.FluentValidate(new ProductValidator(), product); Bunları yazmıyoruz çünkü AOP'ye uygun değil, her defasında çağırmak durumunda kalıyoruz
             return _productDal.Add(product);
             //EfProductDal efProductDal = new EfProductDal(); Böyle yaparsan businessı efye bağımlı hale getirirsin
         }
@@ -31,7 +34,14 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
 
         public Product GetById(int id)
         {
-            return _productDal.Get(p => p.productId == id);
+            return _productDal.Get(p => p.ProductId == id);
+        }
+
+        [FluentValidate(typeof(ProductValidator))]
+        public Product Update(Product product)
+        {
+            //ValidatorTool.FluentValidate(new ProductValidator(), product);
+            return _productDal.Update(product);
         }
     }
 }
