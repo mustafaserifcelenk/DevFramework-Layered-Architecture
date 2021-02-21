@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DevFramework.Northwind.DataAccess.Concrete.NHibernate.Mappings
 {
-    class ProductMap : ClassMap<Product>
+    public class ProductMap : ClassMap<Product>
     {
         public ProductMap()
         {

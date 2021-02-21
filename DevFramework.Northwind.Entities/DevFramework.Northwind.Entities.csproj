@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComplexTypes\ProductDetail.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -48,9 +49,7 @@
   <ItemGroup>
     <Content Include="Entities.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ComplexTypes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DevFramework.Core\DevFramework.Core.csproj">
       <Project>{75cdc7de-7aa7-45da-858b-8a31f12ede13}</Project>

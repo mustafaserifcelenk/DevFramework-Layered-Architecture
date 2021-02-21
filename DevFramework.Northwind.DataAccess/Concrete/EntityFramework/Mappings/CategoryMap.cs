@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DevFramework.Northwind.DataAccess.Concrete.NHibernate.Mappings
+namespace DevFramework.Northwind.DataAccess.Concrete.EntityFramework.Mappings
 {
-    class CategoryMap : EntityTypeConfiguration<Category>
+    public class CategoryMap : EntityTypeConfiguration<Category>
     {
         public CategoryMap()
         {
