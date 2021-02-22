@@ -28,6 +28,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             _productDal = productDal;
         }
         [FluentValidationAspect(typeof(ProductValidator))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))] //Ürünle ilgili tüm cacheleri siler
         public Product Add(Product product)
         {
             //ValidatorTool.FluentValidate(new ProductValidator(), product); Bunları yazmıyoruz çünkü AOP'ye uygun değil, her defasında çağırmak durumunda kalıyoruz
