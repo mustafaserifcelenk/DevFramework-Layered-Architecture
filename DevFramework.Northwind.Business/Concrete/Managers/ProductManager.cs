@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevFramework.Core.Aspects.Postsharp;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -19,7 +20,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         {
             _productDal = productDal;
         }
-        [FluentValidate(typeof(ProductValidator))]
+        [FluentValidationAspect(typeof(ProductValidator))]
         public Product Add(Product product)
         {
             //ValidatorTool.FluentValidate(new ProductValidator(), product); Bunları yazmıyoruz çünkü AOP'ye uygun değil, her defasında çağırmak durumunda kalıyoruz
@@ -37,7 +38,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             return _productDal.Get(p => p.ProductId == id);
         }
 
-        [FluentValidate(typeof(ProductValidator))]
+        [FluentValidationAspect(typeof(ProductValidator))]
         public Product Update(Product product)
         {
             //ValidatorTool.FluentValidate(new ProductValidator(), product);
