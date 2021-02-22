@@ -1,0 +1,1 @@
+﻿Bir bir iş katmanı sırasında ürünlere ekleme güncelleme silme işlemlerini aynı metotun içerisinde yapacağımız işler olabilir ve bunlardan birinin başarısız olması durumunda diğerleri geri mi sarılacak yoksa devam mı edilecek, bu transaction yönetimidir.

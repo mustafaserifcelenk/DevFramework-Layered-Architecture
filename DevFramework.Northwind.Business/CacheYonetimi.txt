@@ -1,0 +1,1 @@
+﻿Arzu edilen datanın cache eklenmesi

@@ -9,15 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevFramework.Core.Aspects.Postsharp;
+using DevFramework.Core.DataAccess;
+using System.Transactions;
+using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
     public class ProductManager : IProductService
     {
         private IProductDal _productDal;
+        //private readonly IQueryableRepository<Product> _queryable;
 
-        public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal) //, IQueryableRepository<Product> queryable
         {
+            //_queryable = queryable;
             _productDal = productDal;
         }
         [FluentValidationAspect(typeof(ProductValidator))]
@@ -28,14 +33,41 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             //EfProductDal efProductDal = new EfProductDal(); Böyle yaparsan businessı efye bağımlı hale getirirsin
         }
 
+        [CacheAspect()]
         public List<Product> GetAll()
         {
+            //_queryable.Table.Where()
             return _productDal.GetList();
         }
 
         public Product GetById(int id)
         {
             return _productDal.Get(p => p.ProductId == id);
+        }
+
+        [TransactionScopeAspect]
+        public void TransactionalOperation(Product product1, Product product2)
+        {
+            ////Kirli yöntem
+            //using (TransactionScope scope = new TransactionScope())
+            //{
+            //    try
+            //    {
+            //        _productDal.Add(product1);
+            //        //business Codes
+            //        _productDal.Add(product2);
+            //        scope.Complete();
+            //    }
+            //    catch
+            //    {
+            //        scope.Dispose();
+            //    }
+            //}
+
+            _productDal.Add(product1);
+            //business Codes
+            _productDal.Add(product2);
+
         }
 
         [FluentValidationAspect(typeof(ProductValidator))]
