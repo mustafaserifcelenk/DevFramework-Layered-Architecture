@@ -9,12 +9,12 @@ namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net
 {
     //Logları tutma şeklimiz Json formatında olduğundan onların serialize edilmesi
     [Serializable]
-    public class SeriazlizableLogEvent
+    public class SerializableLogEvent
     {
         //Buraya loglama bilgisini göndereceğiz
         private LoggingEvent _loggingEvent;
 
-        public SeriazlizableLogEvent(LoggingEvent loggingEvent)
+        public SerializableLogEvent(LoggingEvent loggingEvent)
         {
             _loggingEvent = loggingEvent;
         }
