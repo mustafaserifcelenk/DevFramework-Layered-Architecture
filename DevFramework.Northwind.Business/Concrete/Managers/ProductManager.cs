@@ -14,6 +14,7 @@ using System.Transactions;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
 using DevFramework.Core.CrossCuttingConcerns.Catching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
+using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -37,6 +38,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
+        [LogAspect(typeof(DatabaseLogger))]
         public List<Product> GetAll()
         {
             //_queryable.Table.Where()
