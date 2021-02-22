@@ -26,7 +26,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Layouts
 
             var json = JsonConvert.SerializeObject(logEvent, Formatting.Indented); //Intendent : Klasik Json formatı
 
-            writer.WriteLine(json);
+            writer.WriteLine(json); //writer: yazılacak nesneyi içerir
         }
     }
 }
