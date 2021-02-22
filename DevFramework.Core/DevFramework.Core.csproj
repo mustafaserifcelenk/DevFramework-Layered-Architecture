@@ -120,6 +120,7 @@
     <Compile Include="CrossCuttingConcerns\Catching\ICacheManager.cs" />
     <Compile Include="CrossCuttingConcerns\Catching\Microsoft\MemoryCacheManager.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\Log4Net\LoggerService.cs" />
+    <Compile Include="CrossCuttingConcerns\Logging\Log4Net\SeriazlizableLogEvent.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogDetail.cs" />
     <Compile Include="CrossCuttingConcerns\Logging\LogParameter.cs" />
     <Compile Include="CrossCuttingConcerns\Validation\FluentValidation\ValidatorTool.cs" />
