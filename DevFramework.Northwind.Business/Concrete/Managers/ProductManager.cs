@@ -12,6 +12,8 @@ using DevFramework.Core.Aspects.Postsharp;
 using DevFramework.Core.DataAccess;
 using System.Transactions;
 using DevFramework.Core.Aspects.Postsharp.TransactionAspects;
+using DevFramework.Core.CrossCuttingConcerns.Catching.Microsoft;
+using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -33,7 +35,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
             //EfProductDal efProductDal = new EfProductDal(); Böyle yaparsan businessı efye bağımlı hale getirirsin
         }
 
-        [CacheAspect()]
+        [CacheAspect(typeof(MemoryCacheManager))]
         public List<Product> GetAll()
         {
             //_queryable.Table.Where()

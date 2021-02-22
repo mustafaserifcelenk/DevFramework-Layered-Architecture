@@ -10,6 +10,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Catching.Microsoft
 {
     public class MemoryCacheManager : ICacheManager
     {
+
         protected ObjectCache Cache => MemoryCache.Default;
 
         public void Add(string key, object data, int cacheTime = 60 )
