@@ -1,3 +1,5 @@
+using DevFramework.Northwind.Business.DependecyResolvers.Ninject;
+using DevFramework.Core.Utilities.MVC.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +15,8 @@ namespace DevFramework.Northwind.Mvc.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
         }
     }
 }

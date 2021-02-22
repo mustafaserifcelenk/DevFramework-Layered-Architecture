@@ -10,7 +10,7 @@ using System.Web.Routing;
 
 namespace DevFramework.Core.Utilities.MVC.Infrastructure
 {
-    class NinjectControllerFactory : DefaultControllerFactory
+    public class NinjectControllerFactory : DefaultControllerFactory
     {
 
         //Businesste oluşturduğumuz ninject injectionu entegre etme
