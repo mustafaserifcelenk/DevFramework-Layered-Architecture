@@ -17,7 +17,7 @@ namespace DevFramework.Core.CrossCuttingConcerns.Security.Web
         public static void CreateAuthCookie(Guid id, string userName, string email, DateTime expiration, string[] roles, bool rememberMe, string firstName, string lastName) //expiration : disable olma zamanı
         {
             //formauthenticationda mantık şu: bir ticket oluşturuluyor ve bu ticket cookie olarak şifreli bir şekilde tutuluyor
-            var authTicket = new FormsAuthenticationTicket(1, userName, DateTime.Now, expiration, rememberMe, CreateAuthTags(email,roles,firstName,lastName,id) ); //custom datayı bir formatta tutmak için metot oluşturduk
+            var authTicket = new FormsAuthenticationTicket(1, userName, DateTime.Now, expiration, rememberMe, CreateAuthTags(email, roles, firstName, lastName, id)); //custom datayı bir formatta tutmak için metot oluşturduk
 
             //strigi encrypt edeceğiz
             string encTicket = FormsAuthentication.Encrypt(authTicket);
@@ -34,20 +34,19 @@ namespace DevFramework.Core.CrossCuttingConcerns.Security.Web
             for (int i = 0; i < roles.Length; i++)
             {
                 stringBuilder.Append(roles[i]);
-                if (i<roles.Length-1)
+                if (i < roles.Length - 1)
                 {
-                stringBuilder.Append(",");
+                    stringBuilder.Append(",");
                 }
-
-                stringBuilder.Append("|");
-                stringBuilder.Append(firstName);
-                stringBuilder.Append("|");
-                stringBuilder.Append(lastName);
-                stringBuilder.Append("|");
-                stringBuilder.Append(id);
-
-                return stringBuilder.ToString();
             }
+            stringBuilder.Append("|");
+            stringBuilder.Append(firstName);
+            stringBuilder.Append("|");
+            stringBuilder.Append(lastName);
+            stringBuilder.Append("|");
+            stringBuilder.Append(id);
+
+            return stringBuilder.ToString();
         }
     }
 }
