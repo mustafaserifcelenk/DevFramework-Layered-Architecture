@@ -24,6 +24,9 @@ namespace DevFramework.Northwind.Business.DependecyResolvers.Ninject
             Bind<IProductDal>().To<EfProductDal>();
             //Bind<IProductDal>().To<NHProductDal>(); Değiştirmek istediğimizde sağ tarafı değiştiririz ve olay kapanır
 
+            Bind<IUserService>().To<UserManager>();
+            Bind<IUserDal>().To<EfUserDal>();
+
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
             Bind<DbContext>().To<NorthwindContext>(); //biri senden DbContext isterse onu Northwindcontexte bağla, IQueryable istiyor mesela
 
