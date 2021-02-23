@@ -21,7 +21,7 @@ namespace DevFramework.Core.Aspects.Postsharp.AuthorizationAspects
 
             for (int i = 0; i < roles.Length; i++)
             {
-                if (System.Threading.Thread.CurrentPrincipal.IsInRole(roles[i])) //Current principal:Şu anki kullanıcı
+                if (System.Threading.Thread.CurrentPrincipal.IsInRole(roles[i])) //Current principal: .Net framework ile gelen herhangi bir uygulama bağımsız, bizim mevcut kullanıcıyı ve bu kullanıcıya ait bilgileri tutabildiğimiz rol bazlı güvenlik sistemlerinde  kullandığımız bir yapı, bu uygulama bağımsız olduğundan bu kullanılmalıdır
                 {
                     isAuthorized = true;
                 }
