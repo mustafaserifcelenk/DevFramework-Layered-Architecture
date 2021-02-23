@@ -144,6 +144,7 @@
     <Compile Include="Aspects\Postsharp\ExceptionAspects\ExceptionLogAspect.cs" />
     <Compile Include="Aspects\Postsharp\FluentValidationAspect.cs" />
     <Compile Include="Aspects\Postsharp\LogAspects\LogAspect.cs" />
+    <Compile Include="Aspects\Postsharp\PerformanceAspects\PerformanceCounterAspect.cs" />
     <Compile Include="Aspects\Postsharp\TransactionAspects\TransactionScopeAspect.cs" />
     <Compile Include="CrossCuttingConcerns\Catching\ICacheManager.cs" />
     <Compile Include="CrossCuttingConcerns\Catching\Microsoft\MemoryCacheManager.cs" />

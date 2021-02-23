@@ -41,6 +41,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         [CacheAspect(typeof(MemoryCacheManager))]
         [LogAspect(typeof(DatabaseLogger))]
         [LogAspect(typeof(FileLogger))]
+        //[PerformanceCounterAspect(2)] Burada özel bir intervalda istisna edebiliyoruz
         public List<Product> GetAll()
         {
             //_queryable.Table.Where()

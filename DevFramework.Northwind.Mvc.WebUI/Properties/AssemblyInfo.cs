@@ -1,4 +1,5 @@
 ﻿using DevFramework.Core.Aspects.Postsharp.ExceptionAspects;
+using DevFramework.Core.Aspects.Postsharp.PerformanceAspects;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -14,6 +15,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
+//[assembly: PerformanceCounterAspect(2,AttributeTypes = "DevFramework.Northwind.Business.Concrete.Managers.*")] 2 burada 5 olan default yerine
+
 //[assembly: LogAspect(typeof(FileLogger), AttributeTargetTypes = "DevFramework.Northwind.Business.Concrete.Managers.*")] Buraya log yazarsan tüm managerlar etkilenir, veya attributeu kullanarak belli bir dosyadaki tüm managerları loglarsın ve ya get ile başlayanları (.Get*), veya içinde Add geçenleri(.*Add*)
 //[assembly: ExceptionLogAspect("")] yukardakiyle aynı
 
