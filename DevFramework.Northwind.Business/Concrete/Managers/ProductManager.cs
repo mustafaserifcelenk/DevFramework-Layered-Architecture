@@ -16,6 +16,7 @@ using DevFramework.Core.CrossCuttingConcerns.Catching.Microsoft;
 using DevFramework.Core.Aspects.Postsharp.CacheAspects;
 using DevFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using DevFramework.Core.Aspects.Postsharp.LogAspects;
+using DevFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 
 namespace DevFramework.Northwind.Business.Concrete.Managers
 {
@@ -42,6 +43,7 @@ namespace DevFramework.Northwind.Business.Concrete.Managers
         [LogAspect(typeof(DatabaseLogger))]
         [LogAspect(typeof(FileLogger))]
         //[PerformanceCounterAspect(2)] Burada özel bir intervalda istisna edebiliyoruz
+        [SecuredOperation(Roles="Admin")] //Bu metodu sadece adminler çalıştırabilsin
         public List<Product> GetAll()
         {
             //_queryable.Table.Where()
