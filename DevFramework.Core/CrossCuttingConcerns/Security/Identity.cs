@@ -9,11 +9,11 @@ namespace DevFramework.Core.CrossCuttingConcerns.Security
 {
     public class Identity : IIdentity
     {
-        public string Name => throw new NotImplementedException();
+        public string Name { get; set; }
 
-        public string AuthenticationType => throw new NotImplementedException();
+        public string AuthenticationType { get; set; }
 
-        public bool IsAuthenticated => throw new NotImplementedException();
+        public bool IsAuthenticated { get; set; }
 
         public Guid Id { get; set; }
         public string FirstName { get; set; }
